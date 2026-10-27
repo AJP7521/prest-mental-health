@@ -13,6 +13,15 @@ describe('exercise requirements', () => {
     expect(breathingState(60000).complete).toBe(true)
     expect(breathingState(95000).remaining).toBe(0)
   })
+  it('counts up on inhale and down on exhale, including endpoints each cycle', () => {
+    for (let cycle = 0; cycle < 6; cycle++) {
+      const start = cycle * 10000
+      expect([0, 1000, 2000, 3000, 3999].map(ms => breathingState(start + ms).counter)).toEqual([0, 1, 2, 3, 4])
+      expect([4000, 5000, 6000, 7000, 8000, 9000, 9999].map(ms => breathingState(start + ms).counter)).toEqual([6, 5, 4, 3, 2, 1, 0])
+    }
+    expect(breathingState(60000).counter).toBe(0)
+    expect(breathingState(95000).counter).toBe(0)
+  })
   it('presents all 15 grounding items in the required order', () => {
     expect(groundingSteps.map(s => s.sense)).toEqual([
       ...Array(5).fill('see'), ...Array(4).fill('feel'), ...Array(3).fill('hear'), ...Array(2).fill('smell'), 'taste',

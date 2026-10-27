@@ -9,6 +9,7 @@ from uuid import uuid4
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 SKILLS = [
@@ -127,6 +128,11 @@ def create_app(database_path=None):
     def clear_history():
         with database() as db:
             db.execute("DELETE FROM sessions")
+
+    # Register after API routes so the built Vue app shares their origin.
+    frontend_dist = Path(__file__).resolve().parent.parent / "frontend" / "dist"
+    if frontend_dist.is_dir():
+        app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")
 
     return app
 

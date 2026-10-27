@@ -10,7 +10,34 @@ A local Vue + FastAPI prototype for short, optional breathing and grounding exer
 - `Part-1-report.md`: Earlier research and design report; its implementation status describes the workspace before this application was added.
 - `prompts.md`: Reusable prompts and the saved conversation transcript.
 
-## Run locally
+## Launch after downloading from GitHub
+
+Install Python 3.10+ and Node.js 22.12+ (including npm). On Windows, enable Python's **Add Python to PATH** installer option.
+
+Download this repository using **Code → Download ZIP** and extract it, or clone it:
+
+```sh
+git clone https://github.com/AJP7521/prest-mental-health.git
+cd prest-mental-health
+```
+
+Open a terminal in the extracted or cloned project folder (the folder containing `launch.py`). On macOS or Linux, run:
+
+```sh
+python3 launch.py
+```
+
+On Windows, run:
+
+```powershell
+py launch.py
+```
+
+The launcher creates a Python virtual environment, installs dependencies, builds Vue, and starts FastAPI. Internet access is required for dependency installation. Once the terminal says **Application startup complete**, open **http://127.0.0.1:8000**. Keep the terminal open while using the app; press **Ctrl+C** to stop. Run the same command to launch again or after downloading updates.
+
+Each person runs their own copy on their computer, with their own local SQLite history. The GitHub repository page itself does not run the application. If port 8000 is already in use, stop the earlier server before launching again. If dependency installation fails, check your internet connection and installed Python/Node versions, then retry.
+
+## Development with live reload
 
 Requires Node.js 20.19+ or 22.12+ and Python 3.10+.
 
@@ -68,7 +95,7 @@ npm test
 npm run build
 ```
 
-The backend tests use temporary databases. Frontend tests check breathing boundaries and grounding sequence. `npm run build` produces `frontend/dist`; Vite's development proxy is not included in those static assets, so serving that build requires a separate `/api` reverse proxy.
+The backend tests use temporary databases. Frontend tests check breathing boundaries and grounding sequence. `npm run build` produces `frontend/dist`; FastAPI serves that directory when it exists at startup, alongside `/api`. The launcher builds it before starting FastAPI.
 
 ## Technical references
 
