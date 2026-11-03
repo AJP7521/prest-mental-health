@@ -1,0 +1,24 @@
+Initial successful browser flow (captured from Uvicorn output):
+GET /api/coaching 200
+POST /api/sessions 201
+POST /api/sessions/82214fa6-0d94-4b53-9f7d-aafaf1fbcfb2/chat 200
+POST /api/sessions/82214fa6-0d94-4b53-9f7d-aafaf1fbcfb2/begin 200
+PATCH /api/sessions/82214fa6-0d94-4b53-9f7d-aafaf1fbcfb2 200
+
+Remaining output before intentionally stopping the verification backend:
+INFO:     127.0.0.1:58907 - "POST /api/sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:58908 - "GET /api/coaching HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58913 - "POST /api/sessions/e252a8b5-f616-4805-b788-26534924184b/begin HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58919 - "PATCH /api/sessions/e252a8b5-f616-4805-b788-26534924184b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58929 - "GET /api/coaching HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58928 - "POST /api/sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:58934 - "POST /api/sessions/31972227-6548-499e-9ac7-5a7744b9c0b3/begin HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58941 - "PATCH /api/sessions/31972227-6548-499e-9ac7-5a7744b9c0b3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58948 - "PATCH /api/sessions/31972227-6548-499e-9ac7-5a7744b9c0b3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58953 - "GET /api/coaching HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58952 - "POST /api/sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:58959 - "POST /api/sessions/6ce2873a-a096-4306-b6d5-4eae7a9a519b/begin HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38100]

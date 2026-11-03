@@ -21,11 +21,17 @@ def main():
     major, minor, *_ = map(int, version.split("."))
     if not ((major == 20 and minor >= 19) or (major == 22 and minor >= 12) or major >= 24):
         raise RuntimeError("Use Node.js 20.19+, 22.12+, or 24+.")
+    try:
+        port = int(os.environ.get("PORT", "8000"))
+    except ValueError as error:
+        raise RuntimeError("PORT must be a number from 1 to 65535.") from error
+    if not 1 <= port <= 65535:
+        raise RuntimeError("PORT must be a number from 1 to 65535.")
     with socket.socket() as probe:
         try:
-            probe.bind(("127.0.0.1", 8000))
+            probe.bind(("127.0.0.1", port))
         except OSError as error:
-            raise RuntimeError("Port 8000 is in use. Stop the other server and try again.") from error
+            raise RuntimeError(f"Port {port} is unavailable. Stop the other server or choose another PORT.") from error
 
     environment = ROOT / "backend" / ".venv"
     python = environment / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
@@ -39,10 +45,10 @@ def main():
     ]
     for command, directory in commands:
         subprocess.run(command, cwd=directory, check=True)
-    print("\nOpen http://127.0.0.1:8000 once the server starts. Press Ctrl+C to stop.\n", flush=True)
+    print(f"\nOpen http://127.0.0.1:{port} once the server starts. Press Ctrl+C to stop.\n", flush=True)
     return subprocess.call([
         str(python), "-m", "uvicorn", "main:app", "--app-dir", "backend",
-        "--host", "127.0.0.1", "--port", "8000",
+        "--host", "127.0.0.1", "--port", str(port),
     ], cwd=ROOT)
 
 

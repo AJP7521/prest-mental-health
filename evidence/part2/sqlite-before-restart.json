@@ -1,0 +1,42 @@
+[
+  {
+    "id": "82214fa6-0d94-4b53-9f7d-aafaf1fbcfb2",
+    "skill": "breathing",
+    "status": "completed",
+    "started_at": "2026-10-27T03:38:25.542914+00:00",
+    "ended_at": "2026-10-27T03:39:36.442282+00:00",
+    "exercise_started_at": "2026-10-27T03:38:36.433593+00:00",
+    "elapsed_ms": 60001,
+    "end_reason": "completed"
+  },
+  {
+    "id": "e252a8b5-f616-4805-b788-26534924184b",
+    "skill": "breathing",
+    "status": "stopped",
+    "started_at": "2026-10-27T03:39:59.030526+00:00",
+    "ended_at": "2026-10-27T03:40:06.269131+00:00",
+    "exercise_started_at": "2026-10-27T03:40:01.842304+00:00",
+    "elapsed_ms": 4420,
+    "end_reason": "stopped"
+  },
+  {
+    "id": "31972227-6548-499e-9ac7-5a7744b9c0b3",
+    "skill": "breathing",
+    "status": "stopped",
+    "started_at": "2026-10-27T03:40:12.988622+00:00",
+    "ended_at": "2026-10-27T03:40:21.146010+00:00",
+    "exercise_started_at": "2026-10-27T03:40:15.960962+00:00",
+    "elapsed_ms": 5178,
+    "end_reason": "interrupted"
+  },
+  {
+    "id": "6ce2873a-a096-4306-b6d5-4eae7a9a519b",
+    "skill": "breathing",
+    "status": "active",
+    "started_at": "2026-10-27T03:40:31.275640+00:00",
+    "ended_at": null,
+    "exercise_started_at": "2026-10-27T03:40:34.806602+00:00",
+    "elapsed_ms": null,
+    "end_reason": null
+  }
+]

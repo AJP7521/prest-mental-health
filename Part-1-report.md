@@ -50,7 +50,7 @@ Use synthetic data for development. Before implementation, define the minimum fi
 
 ## Current status and remaining work
 
-The workspace currently contains project documentation. The frontend, backend, database, and automated tests are not yet implemented.
+At the end of Part 1, the workspace contained project documentation only; the frontend, backend, database, and automated tests had not yet been implemented. Later parts add the working application, so the statements in this historical report describe the Part 1 checkpoint rather than the current repository.
 
 Remaining Part 1 work includes:
 

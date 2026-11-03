@@ -1,0 +1,8 @@
+11:40:48 PM [vite] http proxy error: /api/sessions/6ce2873a-a096-4306-b6d5-4eae7a9a519b
+Error: connect ECONNREFUSED 127.0.0.1:8001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2017:16)
+11:42:19 PM [vite] (client) hmr update /src/App.vue
+11:43:13 PM [vite] (client) hmr update /src/App.vue
+11:43:35 PM [vite] http proxy error: /api/sessions/6b19669f-8ec0-4b88-b091-a87734204630
+Error: connect ECONNREFUSED 127.0.0.1:8001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2017:16)

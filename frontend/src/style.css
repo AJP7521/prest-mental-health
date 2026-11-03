@@ -17,9 +17,11 @@ h1:focus { outline: none; }
 .ocean-backdrop { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(#04283b25, #04283b50), url('/images/underwater.png') center / cover no-repeat, #087e9d; }
 .ocean-backdrop::after { content: ''; position: absolute; inset: 0; background: #041e30; opacity: 0; transition: opacity .5s; }
 .is-exercising .ocean-backdrop::after { opacity: .8; }
-header { height: 100px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid #b0e8ee55; text-shadow: 0 2px 8px #042333; }
+header { height: 124px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid #b0e8ee55; text-shadow: 0 2px 8px #042333; }
 .brand { font-weight: 650; font-size: 20px; letter-spacing: -.6px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.brand-mark { font-size: 40px; font-weight: 400; color: #a0eff1; }
+.waves-wordmark { width: 280px; height: 112px; overflow: visible; }
+.waves-wordmark text { fill: #a0eff1; font-family: 'Quicksand Variable', sans-serif; font-size: 39px; font-weight: 700; letter-spacing: 1px; }
+.waves-ripple { fill: none; stroke: #a0eff1; stroke-width: 2; stroke-linecap: round; opacity: .6; }
 .prototype, .eyebrow, .tag { font-size: 10px; letter-spacing: 2px; font-weight: 650; }
 .prototype { color: #fff5df; }
 main { margin-top: 28px; padding: 0 32px; background: #062c40ed; border: 1px solid #80d0d34d; border-radius: 18px; box-shadow: 0 16px 48px #001b3240; }
@@ -30,19 +32,22 @@ h1 { font-size: 66px; line-height: 1.06; margin: 0 0 20px; }
 h1 em { font-style: normal; font-weight: 600; color: #93e4e6; }
 .intro h1 em { color: #79c5ff; }
 .lead { font-size: 16px; line-height: 1.75; color: #d1e6e9; margin: 0; }
-.skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.skill-card { border: 1px solid #548c9b; border-radius: 12px; text-align: left; padding: 24px; transition: transform .2s, border-color .2s; }
+.skill-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.skill-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid #548c9b; border-radius: 12px; text-align: left; padding: 24px; transition: transform .2s, border-color .2s; }
 .skill-card:hover { transform: translateY(-3px); border-color: #a0eff1; }
 .breathing-card { background: #104455; }
 .grounding-card { background: #183c57; border-color: #607b9e; }
-.card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.card-top { width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .symbol { font-size: 40px; line-height: 1; color: #9debf0; }
 .tag { letter-spacing: 1px; color: #d1e6e9; }
 .skill-card h2 { font-size: 29px; letter-spacing: -.8px; margin: 0 0 10px; }
 .skill-card p { color: #d1e6e9; font-size: 14px; line-height: 1.7; margin: 0 0 24px; }
-.card-link { display: flex; justify-content: space-between; font-size: 13px; font-weight: 650; color: #b9f6f0; }
+.card-link { width: 100%; margin-top: auto; display: flex; justify-content: space-between; font-size: 13px; font-weight: 650; color: #b9f6f0; }
 .card-link span { font-size: 21px; }
 .below-cards { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding: 22px 0 28px; font-size: 12px; color: #d1e6e9; }
+.repeat-practice { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; margin: -4px 0 26px; padding: 14px 18px; border: 1px solid #79b9c2; border-radius: 12px; background: #103f50; }
+.repeat-practice p { margin: 0; color: #d1e6e9; font-size: 13px; line-height: 1.6; }
+.repeat-practice div { display: flex; gap: 18px; }
 .text-button { background: none; border: 0; padding: 8px 0; text-decoration: underline; text-underline-offset: 4px; font-size: 12px; }
 footer { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10; background: #b49530; color: #171e20; border-top: 2px solid #ddbe59; padding: 18px 24px calc(18px + env(safe-area-inset-bottom)); box-shadow: 0 -4px 20px #001a3133; }
 .support { max-width: 996px; margin: auto; display: flex; align-items: baseline; justify-content: flex-start; flex-wrap: wrap; gap: 6px 24px; text-align: left; direction: ltr; }
@@ -69,7 +74,7 @@ footer { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10; backgrou
 .grounding-help-button { background: transparent; border: 1px solid #b4e5e9; border-radius: 24px; padding: 10px 20px; margin-bottom: 20px; font-size: 14px; }
 .grounding-suggestion { max-width: 380px; margin: 0 0 20px; padding: 12px 16px; border-radius: 12px; background: #104455; color: #d1e6e9; font-size: 14px; line-height: 1.6; }
 .stop { border: 1px solid #b4e5e9; border-radius: 30px; padding: 13px 25px; background: #082d40; margin-top: 28px; }
-.sense-number { font-family: 'Quicksand Variable', sans-serif; font-size: 80px; line-height: 1; color: #9be6e5; margin: 20px 0; }
+.sense-emoji { font-size: 80px; line-height: 1.2; margin: 20px 0; }
 .outcome-symbol { font-size: 90px; color: #9be6e5; margin-bottom: 30px; }
 .outcome .primary { margin-top: 30px; }
 .notice { padding: 15px 20px; background: #514630; border: 1px solid #b49530; border-radius: 8px; font-size: 14px; line-height: 1.5; }
@@ -82,8 +87,9 @@ footer { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10; backgrou
 .empty { margin: 40px 0; color: #d1e6e9; }
 @media (max-width: 650px) {
   .app-shell { padding: 0 18px 140px; }
-  header { height: 80px; }
+  header { height: 100px; }
   .brand { font-size: 17px; }
+  .waves-wordmark { width: clamp(180px, 52vw, 240px); height: auto; }
   .prototype { font-size: 8px; letter-spacing: 1px; }
   main { padding: 0 20px; margin-top: 18px; }
   .intro { padding-top: 28px; }
@@ -92,6 +98,7 @@ footer { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10; backgrou
   .skill-card { padding: 22px; }
   .card-top { margin-bottom: 20px; }
   .below-cards { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .repeat-practice { align-items: flex-start; flex-direction: column; }
   footer { padding: 12px 18px calc(12px + env(safe-area-inset-bottom)); }
   .support { gap: 2px 16px; }
   .exercise, .outcome { min-height: 540px; padding: 32px 0; }
@@ -122,3 +129,48 @@ footer { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10; backgrou
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .breath-bubble, .breath-bubble::before { transform: none !important; }
 }
+
+.preparation { padding: 36px 0; }
+.preparation h1 { font-size: 42px; }
+.preparation p { line-height: 1.7; }
+.preparation .history-actions { margin-top: 28px; }
+.status small, .status button { display: block; }
+
+.account-panel { padding: 40px 0; max-width: 560px; margin: auto; }
+.account-panel h1 { font-size: clamp(32px, 6vw, 46px); }
+.account-panel p { line-height: 1.7; }
+.account-form { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+.account-form input:not([type=checkbox]), select { width: 100%; padding: 13px; border: 1px solid #a0eff1; border-radius: 8px; background: #104455; color: #fff5df; font: inherit; }
+.account-form small { color: #d1e6e9; }
+.account-form input:focus-visible, select:focus-visible { outline: 3px solid #ffe19a; outline-offset: 3px; }
+.checkbox-label { display: flex; align-items: center; gap: 12px; }
+.checkbox-label input { width: 22px; height: 22px; }
+.account-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 24px; padding-top: 14px; }
+.history-filter { margin-top: 24px; max-width: 360px; }
+.history-filter label { display: block; margin-bottom: 8px; }
+.text-pacing .breath-bubble { display: none; }
+
+
+@media (min-width: 651px) and (max-width: 950px) {
+  .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.wave-card { background: #174d58; border-color: #6da8ad; }
+@media (min-width: 951px) {
+  .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* A travelling crest across the wordmark; pause during focused exercises. */
+.waves-letter { animation: wordmark-wave 3.6s ease-in-out infinite; }
+.waves-ripple { animation: wordmark-ripple 3.6s ease-in-out infinite; transform-origin: 90px 57px; }
+@keyframes wordmark-wave {
+  0%, 100% { transform: translateY(3px); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes wordmark-ripple {
+  0%, 100% { transform: translateY(1px) scaleX(.96); opacity: .45; }
+  50% { transform: translateY(-1px) scaleX(1.04); opacity: .7; }
+}
+.is-exercising .waves-letter, .is-exercising .waves-ripple { animation-play-state: paused; }
+
+.chat-card { background: #244657; border-color: #739eae; }

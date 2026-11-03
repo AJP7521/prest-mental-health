@@ -1,0 +1,15 @@
+INFO:     127.0.0.1:58982 - "PATCH /api/sessions/6ce2873a-a096-4306-b6d5-4eae7a9a519b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58986 - "GET /api/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58991 - "GET /api/sessions/82214fa6-0d94-4b53-9f7d-aafaf1fbcfb2/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59017 - "GET /api/coaching HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59016 - "POST /api/sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59022 - "POST /api/sessions/e9972be4-a90f-42e4-8ae2-9c3099b9d0cf/begin HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59027 - "PATCH /api/sessions/e9972be4-a90f-42e4-8ae2-9c3099b9d0cf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59031 - "PATCH /api/sessions/e9972be4-a90f-42e4-8ae2-9c3099b9d0cf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59048 - "GET /api/coaching HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59047 - "POST /api/sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59053 - "POST /api/sessions/6b19669f-8ec0-4b88-b091-a87734204630/begin HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38769]

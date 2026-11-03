@@ -7,3 +7,7 @@ __pycache__/
 *.sqlite3-*
 .env
 .DS_Store
+
+# Local chatbot credentials and atomic-write temporary files
+backend/.openai-api-key
+backend/.openai-key-*
